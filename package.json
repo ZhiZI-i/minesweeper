@@ -5,9 +5,14 @@
   "main": "src/js/main.js",
   "type": "module",
   "scripts": {
-    "start": "live-server --port=3000 --host=localhost"
+    "start": "live-server --port=3000 --host=localhost",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d .",
+    "build": "echo 'No build step required'"
   },
   "devDependencies": {
+    "gh-pages": "^6.2.0",
     "live-server": "^1.2.2"
-  }
-} 
+  },
+  "homepage": "https://你的GitHub用户名.github.io/minesweeper"
+}
