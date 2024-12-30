@@ -1,0 +1,13 @@
+{
+  "name": "minesweeper",
+  "version": "1.0.0",
+  "description": "扫雷游戏",
+  "main": "src/js/main.js",
+  "type": "module",
+  "scripts": {
+    "start": "live-server --port=3000 --host=localhost"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+} 

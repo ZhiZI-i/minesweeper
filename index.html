@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>扫雷游戏</title>
+    <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body>
+    <div class="game-container">
+        <header class="game-header">
+            <div class="controls">
+                <select id="difficulty">
+                    <option value="beginner">初级</option>
+                    <option value="intermediate">中级</option>
+                    <option value="expert">高级</option>
+                </select>
+                <button id="new-game">新游戏</button>
+                <button id="stats" title="查看统计">📊</button>
+                <button id="leaderboard" title="排行榜">🏆</button>
+            </div>
+            <div class="game-info">
+                <div class="mines-count">💣 <span id="mines-left">0</span></div>
+                <div class="face-button" id="face-button">😊</div>
+                <div class="timer">⏱️ <span id="time">0</span></div>
+            </div>
+        </header>
+        
+        <div id="minefield" class="minefield"></div>
+        
+        <div class="game-status" id="game-status"></div>
+
+        <div class="controls-help">
+            <p>操作说明：</p>
+            <ul>
+                <li>左键点击：揭示方块</li>
+                <li>右键点击：标记地雷</li>
+                <li>双击数字：快速揭示周围方块</li>
+                <li>空格键：重新开始</li>
+                <li>1/2/3键：切换难度</li>
+            </ul>
+        </div>
+
+        <!-- 统计对话框 -->
+        <dialog id="stats-dialog" class="dialog">
+            <h2>游戏统计</h2>
+            <div class="stats-content">
+                <div class="stats-item">
+                    <h3>初级</h3>
+                    <p>游戏次数：<span id="beginner-games">0</span></p>
+                    <p>胜利次数：<span id="beginner-wins">0</span></p>
+                    <p>最佳时间：<span id="beginner-best">-</span></p>
+                </div>
+                <div class="stats-item">
+                    <h3>中级</h3>
+                    <p>游戏次数：<span id="intermediate-games">0</span></p>
+                    <p>胜利次数：<span id="intermediate-wins">0</span></p>
+                    <p>最佳时间：<span id="intermediate-best">-</span></p>
+                </div>
+                <div class="stats-item">
+                    <h3>高级</h3>
+                    <p>游戏次数：<span id="expert-games">0</span></p>
+                    <p>胜利次数：<span id="expert-wins">0</span></p>
+                    <p>最佳时间：<span id="expert-best">-</span></p>
+                </div>
+            </div>
+            <button id="close-stats">关闭</button>
+        </dialog>
+
+        <!-- 排行榜对话框 -->
+        <dialog id="leaderboard-dialog" class="dialog">
+            <h2>排行榜</h2>
+            <div class="difficulty-tabs">
+                <button class="tab-button active" data-difficulty="beginner">初级</button>
+                <button class="tab-button" data-difficulty="intermediate">中级</button>
+                <button class="tab-button" data-difficulty="expert">高级</button>
+            </div>
+            <div class="leaderboard-content">
+                <table id="leaderboard-table">
+                    <thead>
+                        <tr>
+                            <th>排名</th>
+                            <th>玩家</th>
+                            <th>用时</th>
+                            <th>日期</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaderboard-body"></tbody>
+                </table>
+            </div>
+            <button id="close-leaderboard">关闭</button>
+        </dialog>
+    </div>
+
+    <script type="module" src="src/js/main.js"></script>
+</body>
+</html> 
